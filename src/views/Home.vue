@@ -1,10 +1,12 @@
 <template>
   <div class="home">
-    <h1>All Campfire Playlists</h1>
-    <div v-for="playlist in playlists" :key="playlist.id">
+    <h1>CampFyre - Bandcamp Playlist app</h1>
+    <h2>All CampFyre Playlists</h2>
+    <div v-for="playlist in playlists" v-bind:key="playlist.id">
       <router-link :to="`/playlists/${playlist.id}`">
-        <h2>{{ playlist.playlist_name }}</h2>
+        <h3>{{ playlist.playlist_name }}</h3>
       </router-link>
+      <p>does anything show up here?</p>
       <!-- <router-link :to="`/users/${playlist.user_id}`">
         <h3>{{ playlist.user.user_name }}</h3>
       </router-link> -->
@@ -21,7 +23,7 @@ export default {
   components: {},
   data: function () {
     return {
-      message: "Welcome to Vue.js!",
+      playlists: [],
     };
   },
   created: function () {
@@ -31,7 +33,7 @@ export default {
     playlistsIndex: function () {
       axios.get("/playlists").then((response) => {
         console.log(response.data);
-        this.posts = response.data;
+        this.playlists = response.data;
       });
     },
   },
