@@ -7,7 +7,7 @@
       </ul>
       <div>
         <label>Name:</label>
-        <input type="text" v-model="newUserParams.name" />
+        <input type="text" v-model="newUserParams.user_name" />
       </div>
       <div>
         <label>Email:</label>

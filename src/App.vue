@@ -1,13 +1,41 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
+      <router-link to="/">Home |</router-link>
+      <!-- <router-link v-if="!isLoggedIn()" to="/">Login |</router-link> -->
+      <router-link to="/signup">Signup |</router-link>
+      <router-link to="/login">Login |</router-link>
+      <router-link v-if="isLoggedIn()" to="/logout">Logout |</router-link>
+      <!-- <button v-if="isLoggedIn()" v-on:click="getUserID()">My Account</button> -->
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  data: function () {
+    return {
+      user_id: "",
+    };
+  },
+  methods: {
+    getUserID: function () {
+      this.user_id = localStorage.getItem("user_id");
+      this.$router.push("/users/" + this.user_id);
+      this.$router.go();
+    },
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
 
 <style>
 #app {
