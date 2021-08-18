@@ -4,7 +4,7 @@
     <h2>All User Playlists</h2>
     <div v-for="playlist in playlists" v-bind:key="playlist.id">
       <router-link :to="`/playlists/${playlist.id}`">
-        <h3>{{ playlist.playlist_name }}</h3>
+        <button v-on:click="savePlaylistId(playlist)">{{ playlist.playlist_name }}</button>
       </router-link>
       <!-- <router-link :to="`/users/${playlist.user_id}`">
         <h3>{{ playlist.user.user_name }}</h3>
@@ -34,6 +34,9 @@ export default {
         console.log(response.data);
         this.playlists = response.data;
       });
+    },
+    savePlaylistId: function (playlist) {
+      localStorage.setItem("playlist_id", playlist.id);
     },
   },
 };

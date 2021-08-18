@@ -1,6 +1,7 @@
 <template>
   <div class="playlistSongs-index">
     <h1>Songs</h1>
+    <h2>{{ songs }}</h2>
   </div>
 </template>
 
@@ -21,6 +22,7 @@ export default {
   data: function () {
     return {
       songs: [],
+      playlist_id: localStorage.getItem("playlist_id"),
     };
   },
   created: function () {
@@ -28,9 +30,11 @@ export default {
   },
   methods: {
     indexPlaylistSongs: function () {
-      axios.get("/songs").then((response) => {
-        console.log("songs index", response);
-        this.posts = response.data;
+      var params = { playlist_id: this.playlist_id };
+      console.log(this.playlist_id);
+      axios.get("/playlistsongs", { params }).then((response) => {
+        console.log("index of playlist songs", response);
+        this.songs = response.data;
       });
     },
   },
