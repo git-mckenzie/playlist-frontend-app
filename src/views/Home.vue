@@ -6,9 +6,6 @@
       <router-link :to="`/playlists/${playlist.id}`">
         <h3>{{ playlist.playlist_name }}</h3>
       </router-link>
-      <!-- <router-link :to="`/users/${playlist.user_id}`">
-        <h3>{{ playlist.user.user_name }}</h3>
-      </router-link> -->
     </div>
   </div>
 </template>
