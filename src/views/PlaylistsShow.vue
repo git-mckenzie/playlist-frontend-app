@@ -2,7 +2,11 @@
   <div class="playlists-show">
     <h2>{{ playlist.playlist_name }}</h2>
     <h3 v-for="song in songs" v-bind:key="song.id">
-      {{ song.song_name }} | {{ song.artist_name }} | {{ song.album_name }} | {{ song.song_url }}
+      <!-- <a :href="`{${song.song_url}}`"> -->
+      <a :href="song.song_url">
+        {{ song.song_name }}
+      </a>
+      | {{ song.artist_name }} | {{ song.album_name }}
     </h3>
   </div>
 </template>
