@@ -2,12 +2,10 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home |</router-link>
-      <!-- <router-link v-if="!isLoggedIn()" to="/">Login |</router-link> -->
       <router-link to="/signup">Signup |</router-link>
       <router-link to="/login">Login |</router-link>
       <router-link to="/userpage">User Page |</router-link>
       <router-link v-if="isLoggedIn()" to="/logout">Logout |</router-link>
-      <!-- <button v-if="isLoggedIn()" v-on:click="getUserID()">My Account</button> -->
       <router-link to="/about">About</router-link>
     </div>
     <router-view />

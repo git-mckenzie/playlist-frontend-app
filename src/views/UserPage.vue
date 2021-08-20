@@ -4,12 +4,17 @@
     <h2>All User Playlists</h2>
     <div v-for="playlist in playlists" v-bind:key="playlist.id">
       <router-link :to="`/playlists/${playlist.id}`">
+        <!-- <a :href="`/playlists/` + playlist.id" onclick="savePlaylistId();">{{ playlist.playlist_name }}</a> -->
         <button v-on:click="savePlaylistId(playlist)">{{ playlist.playlist_name }}</button>
       </router-link>
       <!-- <router-link :to="`/users/${playlist.user_id}`">
         <h3>{{ playlist.user.user_name }}</h3>
       </router-link> -->
     </div>
+    <br />
+    <br />
+    <div><router-link to="/playlists/new">Create a New Playlist</router-link></div>
+    <router-view />
   </div>
 </template>
 
