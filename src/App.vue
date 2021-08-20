@@ -26,11 +26,10 @@ export default {
       this.$router.go();
     },
     isLoggedIn: function () {
-      if (localStorage.getItem("jwt")) {
-        return true;
-      } else {
-        return false;
-      }
+      return localStorage.getItem("jwt");
+      //   return true;
+      // } else {
+      //   return false;
     },
   },
 };
