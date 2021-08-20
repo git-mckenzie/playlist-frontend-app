@@ -7,7 +7,7 @@
       </ul>
       <div>
         <label>Playlist Name:</label>
-        <input type="text" v-model="newPlaylistParams" />
+        <input type="text" v-model="newPlaylistParams.playlist_name" />
       </div>
     </form>
   </div>

@@ -12,7 +12,6 @@
       </router-link> -->
     </div>
     <br />
-    <br />
     <div><router-link to="/playlists/new">Create a New Playlist</router-link></div>
     <router-view />
   </div>
