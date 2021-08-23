@@ -1,6 +1,6 @@
 <template>
   <div class="playlists-show">
-    <h2>{{ playlist }}</h2>
+    <h2>{{ playlist_name }}</h2>
     <h3 v-for="song in songs" v-bind:key="song.id">
       <!-- <a :href="`{${song.song_url}}`"> -->
       <a :href="song.song.song_url">
@@ -31,9 +31,9 @@ export default {
   data: function () {
     return {
       // errors: [],
-      playlist: "",
+      playlist_name: "",
       songs: [],
-      playlist_id: localStorage.getItem("playlist_id"),
+      playlist_id: 0,
     };
   },
   created: function () {
@@ -48,13 +48,18 @@ export default {
         // console.log("index of playlist songs", response.data);
         this.songs = response.data;
         console.log("actual songs", this.songs);
+        console.log("playlist id", this.playlist_id);
       });
     },
     getPlaylistName: function () {
       axios.get("/playlists/" + this.$route.params.id).then((response) => {
         // console.log("playlist name", response);
-        this.playlist = response.data.playlist_name;
-        console.log(this.playlist);
+        this.playlist_name = response.data.playlist_name;
+        this.playlist_id = response.data.id;
+
+        console.log(this.playlist_name);
+        console.log("responses", response.data);
+        console.log(this.playlist_id);
       });
     },
   },
