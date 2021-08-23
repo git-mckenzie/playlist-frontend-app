@@ -8,6 +8,9 @@
       </a>
       | {{ song.song.artist_name }} | {{ song.song.album_name }}
     </h3>
+    <div>
+      <router-link v-bind:to="`/playlists/${playlist_id}/edit`"><button>Edit playlist</button></router-link>
+    </div>
   </div>
 </template>
 

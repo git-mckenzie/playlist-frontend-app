@@ -19,7 +19,7 @@ const routes = [
   { path: "/userpage", name: "user-page", component: UserPage },
   { path: "/playlists/new", name: "playlists-new", component: PlaylistsNew },
   { path: "/playlists/:id", name: "playlists-show", component: PlaylistsShow },
-  { path: "/playlists", name: "playlists-edit", component: PlaylistsEdit },
+  { path: "/playlists/:id/edit", name: "playlists-edit", component: PlaylistsEdit },
   { path: "/about", name: "About", component: () => import(/* webpackChunkName: "about" */ "../views/About.vue") },
 ];
 

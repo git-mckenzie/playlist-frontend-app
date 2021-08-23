@@ -1,14 +1,22 @@
 <template>
-  <div class="playlist-edit">
+  <div class="playlists-edit">
     <form v-on:submit.prevent="updatePlaylist()">
       <h1>Edit Playlist</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <h2>{{ currentPlaylistParams.name }}</h2>
+        <h2>{{ currentPlaylistParams.playlist_name }}</h2>
       </div>
+      <label>Playlist Name:</label>
+      <input type="text" v-model="currentPlaylistParams.playlist_name" />
+      <!-- <label>Song Name:</label>
+      <input type="text" v-model="currentPlaylistParams.id.song" /> -->
       <input type="submit" value="Save Changes" />
+      <br />
+      <br />
+
+      <button v-on:click="destroyPlaylist()">Delete Playlist</button>
     </form>
     <!-- <router-link to="/playlist">Back to your playlists</router-link> -->
   </div>
@@ -22,22 +30,28 @@ export default {
     return {
       currentPlaylistParams: {},
       errors: [],
-      current_user: localStorage.getItem("user_id"),
+      playlist: {},
+      // current_user: localStorage.getItem("user_id"),
     };
   },
-  created: function () {},
+  created: function () {
+    axios.get(`/playlists/${this.$route.params.id}`).then((response) => {
+      console.log("playlist info", response.data);
+      this.currentPlaylistParams = response.data;
+    });
+  },
   methods: {
-    updatePlayList: function () {
-      axios
-        .patch(`/playlists/${this.currentPlaylistParams.id}`)
-        .then((response) => {
-          console.log("update playlist", response);
-          this.$router.push(`"/playlists/${this.currentPlaylistParams.id}`);
-        })
-        .catch((error) => {
-          console.log("update playlist error", error.reponse);
-          this.errors = error.response.data.errors;
-        });
+    updatePlaylist: function () {
+      axios.patch(`/playlists/${this.$route.params.id}`, this.currentPlaylistParams).then((response) => {
+        console.log(response.data);
+        this.$router.push(`/playlists/${this.$route.params.id}`);
+      });
+    },
+    destroyPlaylist: function () {
+      axios.delete(`/playlists/${this.$route.params.id}`).then((response) => {
+        console.log("playlist destroyed", response.data);
+        this.$router.push("/playlists");
+      });
     },
   },
 };
