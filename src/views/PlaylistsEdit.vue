@@ -50,7 +50,7 @@ export default {
     destroyPlaylist: function () {
       axios.delete(`/playlists/${this.$route.params.id}`).then((response) => {
         console.log("playlist destroyed", response.data);
-        this.$router.push("/playlists");
+        this.$router.push("/userpage");
       });
     },
   },

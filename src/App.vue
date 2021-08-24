@@ -6,7 +6,7 @@
       <router-link v-if="!isLoggedIn()" to="/signup">Signup |</router-link>
       <router-link v-if="isLoggedIn()" to="/userpage">User Page |</router-link>
       <router-link v-if="isLoggedIn()" to="/logout">Logout |</router-link>
-      <router-link to="/about">About</router-link>
+      <!-- <router-link to="/about">About</router-link> -->
     </div>
     <router-view />
   </div>

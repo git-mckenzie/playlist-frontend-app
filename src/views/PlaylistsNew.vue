@@ -3,7 +3,7 @@
     <form
       v-on:submit.prevent="
         createPlaylist();
-        addSongtoPlaylist();
+        newSong();
       "
     >
       <h1>Create a New Playlist</h1>
@@ -40,6 +40,7 @@
       </div>
       <input type="submit" value="Create" />
     </form>
+    <form v-on:submit.prevent="addSongToPlaylist()"></form>
   </div>
 </template>
 
@@ -51,6 +52,7 @@ export default {
     return {
       newPlaylistParams: {},
       newSongParams: {},
+      newPlaylistSongParams: {},
       errors: [],
     };
   },
@@ -64,19 +66,31 @@ export default {
           this.$router.push("/userpage");
         })
         .catch((error) => {
-          console.log("create playlists error", error.response);
+          console.log("create playlist error", error.response);
           this.errors = error.response.data.errors;
         });
     },
-    addSongtoPlaylist: function () {
+    newSong: function () {
       axios
-        .post("/playlistsongs", this.newSongParams)
+        .post("/songs", this.newSongParams)
         .then((response) => {
-          console.log("add song", response);
+          console.log("new song", response);
+          this.$router.push("/songs");
+        })
+        .catch((error) => {
+          console.log("new song error", error.response);
+          this.errors = error.response.data.errors;
+        });
+    },
+    addSongToPlaylist: function () {
+      axios
+        .post("/playlistsongs", this.newPlaylistSongParams)
+        .then((response) => {
+          console.log("add song to playlist", response);
           this.$router.push("/playlistsongs");
         })
         .catch((error) => {
-          console.log("add song error", error.response);
+          console.log("add song to playlist error", error.response);
           this.errors = error.response.data.errors;
         });
     },
