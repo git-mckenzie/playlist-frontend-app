@@ -38,9 +38,9 @@
         <label>Song URL:</label>
         <input type="text" v-model="newSongParams.song_url" />
       </div>
-      <input type="submit" value="Create" />
+      <input type="submit" value="Save Playlist and Songs" />
     </form>
-    <form v-on:submit.prevent="addSongToPlaylist()"></form>
+    <button v-on:click="addSongToPlaylist()">Create Playlist</button>
   </div>
 </template>
 
@@ -53,6 +53,10 @@ export default {
       newPlaylistParams: {},
       newSongParams: {},
       newPlaylistSongParams: {},
+      playlist_id: 0,
+      song_id: 0,
+      playlist: {},
+      song: {},
       errors: [],
     };
   },
@@ -61,9 +65,8 @@ export default {
     createPlaylist: function () {
       axios
         .post("/playlists", this.newPlaylistParams)
-        .then((response) => {
-          console.log("create playlist", response);
-          this.$router.push("/userpage");
+        .then(() => {
+          // this.$router.push("/userpage");
         })
         .catch((error) => {
           console.log("create playlist error", error.response);
@@ -73,21 +76,49 @@ export default {
     newSong: function () {
       axios
         .post("/songs", this.newSongParams)
-        .then((response) => {
-          console.log("new song", response);
-          this.$router.push("/songs");
+        .then(() => {
+          // this.$router.push("/songs");
         })
         .catch((error) => {
           console.log("new song error", error.response);
           this.errors = error.response.data.errors;
         });
     },
-    addSongToPlaylist: function () {
+    getLastPlaylist: function () {
+      console.log("getting last playlist");
       axios
-        .post("/playlistsongs", this.newPlaylistSongParams)
+        .get("/lastplaylist")
         .then((response) => {
-          console.log("add song to playlist", response);
-          this.$router.push("/playlistsongs");
+          this.playlist_id = response.data.id;
+          console.log("playlist to join", this.playlist_id);
+        })
+        .catch((error) => {
+          console.log("get last playlist error", error.response);
+          this.errors = error.response.data.errors;
+        });
+      this.getLastPlaylist();
+    },
+    getLastSong: function () {
+      console.log("getting last song");
+      axios
+        .get("/lastsong")
+        .then((response) => {
+          this.song_id = response.data.id;
+          console.log("song to join", this.song_id);
+        })
+        .catch((error) => {
+          console.log("get last song error", error.response);
+          this.errors = error.response.data.errors;
+        });
+      this.getLastSong();
+    },
+    addSongToPlaylist: function () {
+      var params = { playlist_id: this.playlist_id, song_id: this.song_id };
+      axios
+        .post("/playlistsongs", params)
+        .then(() => {
+          console.log(params);
+          // this.$router.push("/playlistsongs");
         })
         .catch((error) => {
           console.log("add song to playlist error", error.response);
