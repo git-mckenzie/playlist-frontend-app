@@ -22,6 +22,22 @@
         <label>Song URL:</label>
         <input type="text" v-model="newSongParams.song_url" />
       </div>
+      <div>
+        <label>Song Name:</label>
+        <input type="text" v-model="newSongParams.song_name" />
+        <label>Artist Name:</label>
+        <input type="text" v-model="newSongParams.artist_name" />
+        <label>Song URL:</label>
+        <input type="text" v-model="newSongParams.song_url" />
+      </div>
+      <div>
+        <label>Song Name:</label>
+        <input type="text" v-model="newSongParams.song_name" />
+        <label>Artist Name:</label>
+        <input type="text" v-model="newSongParams.artist_name" />
+        <label>Song URL:</label>
+        <input type="text" v-model="newSongParams.song_url" />
+      </div>
       <input type="submit" value="Create" />
     </form>
   </div>
@@ -45,7 +61,7 @@ export default {
         .post("/playlists", this.newPlaylistParams)
         .then((response) => {
           console.log("create playlist", response);
-          this.$router.push("/playlists");
+          this.$router.push("/userpage");
         })
         .catch((error) => {
           console.log("create playlists error", error.response);
@@ -54,10 +70,10 @@ export default {
     },
     addSongtoPlaylist: function () {
       axios
-        .post("/songs", this.newSongParams)
+        .post("/playlistsongs", this.newSongParams)
         .then((response) => {
           console.log("add song", response);
-          this.$router.push("/songs");
+          this.$router.push("/playlistsongs");
         })
         .catch((error) => {
           console.log("add song error", error.response);
