@@ -119,6 +119,7 @@ export default {
         .then(() => {
           console.log(params);
           // this.$router.push("/playlistsongs");
+          this.$router.push("/userpage");
         })
         .catch((error) => {
           console.log("add song to playlist error", error.response);
