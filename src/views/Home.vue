@@ -17,7 +17,7 @@
     <br />
     <div v-for="playlist in playlists" v-bind:key="playlist.id">
       <router-link :to="`/playlists/${playlist.id}`">
-        <h3>{{ playlist.playlist_name }}</h3>
+        <!-- <h3>{{ playlist.playlist_name }}</h3> -->
         <!-- Playlist Table -->
         <div class="content">
           <div class="row">
@@ -31,15 +31,17 @@
                     <table class="table tablesorter" id="">
                       <thead class="text-primary">
                         <tr>
-                          <th>Playlist Name</th>
-                          <th>Country</th>
+                          <!-- <th class="text-center">Playlist Name</th> -->
+                          <!-- <th>Country</th>
                           <th>City</th>
-                          <th class="text-center">Salary</th>
+                          <th class="text-center">Salary</th> -->
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Dakota Rice</td>
+                          <td>
+                            <h4>{{ playlist.playlist_name }}</h4>
+                          </td>
                           <!-- <td class="text-center">$36,738</td> -->
                         </tr>
                       </tbody>
