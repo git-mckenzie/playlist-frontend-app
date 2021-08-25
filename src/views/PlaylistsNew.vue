@@ -72,6 +72,7 @@ export default {
           console.log("create playlist error", error.response);
           this.errors = error.response.data.errors;
         });
+      this.getLastPlaylist();
     },
     newSong: function () {
       axios
@@ -83,6 +84,7 @@ export default {
           console.log("new song error", error.response);
           this.errors = error.response.data.errors;
         });
+      this.getLastSong();
     },
     getLastPlaylist: function () {
       console.log("getting last playlist");
@@ -96,7 +98,6 @@ export default {
           console.log("get last playlist error", error.response);
           this.errors = error.response.data.errors;
         });
-      this.getLastPlaylist();
     },
     getLastSong: function () {
       console.log("getting last song");
@@ -110,7 +111,6 @@ export default {
           console.log("get last song error", error.response);
           this.errors = error.response.data.errors;
         });
-      this.getLastSong();
     },
     addSongToPlaylist: function () {
       var params = { playlist_id: this.playlist_id, song_id: this.song_id };

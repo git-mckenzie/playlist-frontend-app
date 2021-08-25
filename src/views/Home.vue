@@ -1,9 +1,14 @@
 <template>
   <div class="home">
-    <h1>CampFyre - Bandcamp Playlist app</h1>
+    <h1>CampFyre - Universal Playlist app</h1>
     <p>
-      CampFyre is a Bandcamp playlist creator, designed to help bands and artists make more money, by making it easier
-      for music fans to discover, share and buy new music.
+      CampFyre is a universal streaming playlist creator, originally focused on Bandcamp, but currently works with any
+      streaming URL.
+      <br />
+      CampFyre is designed to help bands and artists make more money, by making it easier for music fans to discover,
+      share and buy new music.
+      <br />
+      We have no affiliation with that dumb festival.
     </p>
     <h2>All CampFyre Playlists</h2>
     <div v-for="playlist in playlists" v-bind:key="playlist.id">
