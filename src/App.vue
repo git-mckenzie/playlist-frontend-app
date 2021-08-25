@@ -28,41 +28,50 @@
               </router-link>
             </li>
             <li>
-              <a href="./map.html">
+              <router-link v-if="!isLoggedIn()" to="/signup">
+                <p>Signup</p>
+                <p></p>
+              </router-link>
+              <!-- <a href="./map.html">
                 <i class="tim-icons icon-pin"></i>
                 <p>Maps</p>
-              </a>
+              </a> -->
             </li>
             <li>
-              <a href="./notifications.html">
+              <router-link v-if="isLoggedIn()" to="/userpage">
+                <i class="tim-icons icon-single-02"></i>
+                <p>User Page</p>
+                <p></p>
+              </router-link>
+              <!-- <a href="./notifications.html">
                 <i class="tim-icons icon-bell-55"></i>
                 <p>Notifications</p>
-              </a>
+              </a> -->
             </li>
-            <li>
+            <!-- <li>
               <a href="./user.html">
                 <i class="tim-icons icon-single-02"></i>
                 <p>User Profile</p>
               </a>
-            </li>
-            <li class="active">
+            </li> -->
+            <!-- <li class="active">
               <a href="./tables.html">
                 <i class="tim-icons icon-puzzle-10"></i>
                 <p>Table List</p>
               </a>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
               <a href="./typography.html">
                 <i class="tim-icons icon-align-center"></i>
                 <p>Typography</p>
               </a>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
               <a href="./rtl.html">
                 <i class="tim-icons icon-world"></i>
                 <p>RTL Support</p>
               </a>
-            </li>
+            </li> -->
             <li class="active-pro">
               <router-link v-if="isLoggedIn()" to="/logout">
                 <!-- <a href="./upgrade.html">
