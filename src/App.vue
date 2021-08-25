@@ -7,21 +7,25 @@
     -->
         <div class="sidebar-wrapper">
           <div class="logo">
-            <a href="javascript:void(0)" class="simple-text logo-mini">CT</a>
-            <a href="javascript:void(0)" class="simple-text logo-normal">Creative Tim</a>
+            <a href="javascript:void(0)" class="simple-text logo-mini"></a>
+            <a href="javascript:void(0)" class="simple-text logo-normal">CampFyre</a>
           </div>
           <ul class="nav">
             <li>
-              <a href="./dashboard.html">
-                <i class="tim-icons icon-chart-pie-36"></i>
-                <p>Dashboard</p>
-              </a>
+              <router-link to="/">
+                <!-- <a href="./"> -->
+                <!-- <i class="tim-icons icon-chart-pie-36"></i> -->
+                <p>Home</p>
+                <!-- </a> -->
+              </router-link>
             </li>
             <li>
-              <a href="./icons.html">
-                <i class="tim-icons icon-atom"></i>
-                <p>Icons</p>
-              </a>
+              <router-link v-if="!isLoggedIn()" to="/login">
+                <!-- <a href="./icons.html">
+                <i class="tim-icons icon-atom"></i> -->
+                <p>Login</p>
+                <!-- </a> -->
+              </router-link>
             </li>
             <li>
               <a href="./map.html">
@@ -60,10 +64,12 @@
               </a>
             </li>
             <li class="active-pro">
-              <a href="./upgrade.html">
-                <i class="tim-icons icon-spaceship"></i>
-                <p>Upgrade to PRO</p>
-              </a>
+              <router-link v-if="isLoggedIn()" to="/logout">
+                <!-- <a href="./upgrade.html">
+                <i class="tim-icons icon-spaceship"></i> -->
+                <p>Logout</p>
+                <!-- </a> -->
+              </router-link>
             </li>
           </ul>
         </div>
@@ -102,7 +108,7 @@
                     <span class="d-lg-none d-md-block">Search</span>
                   </button>
                 </li>
-                <li class="dropdown nav-item">
+                <!-- <li class="dropdown nav-item">
                   <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
                     <div class="notification d-none d-lg-block d-xl-block"></div>
                     <i class="tim-icons icon-sound-wave"></i>
@@ -125,8 +131,8 @@
                       <a href="javascript:void(0)" class="nav-item dropdown-item">Another one</a>
                     </li>
                   </ul>
-                </li>
-                <li class="dropdown nav-item">
+                </li> -->
+                <!-- <li class="dropdown nav-item">
                   <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                     <div class="photo">
                       <img src="/../assets/img/anime3.png" alt="Profile Photo" />
@@ -140,7 +146,7 @@
                     <li class="dropdown-divider"></li>
                     <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a></li>
                   </ul>
-                </li>
+                </li> -->
                 <li class="separator d-lg-none"></li>
               </ul>
             </div>
