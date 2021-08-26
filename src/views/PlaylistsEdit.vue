@@ -1,6 +1,7 @@
 <template>
   <div class="playlists-edit" style="margin-left: 254px">
     <form v-on:submit.prevent="updatePlaylist()">
+      <br />
       <h1>Edit Playlist</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>

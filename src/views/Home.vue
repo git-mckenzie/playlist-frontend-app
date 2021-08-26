@@ -1,7 +1,7 @@
 <template>
   <div class="home" style="margin-left: 254px">
     <br />
-    <h1>CampFyre - Universal Playlist app</h1>
+    <!-- <h1>CampFyre - Universal Playlist app</h1> -->
     <div>
       <p>
         CampFyre is a universal streaming playlist creator,
@@ -21,9 +21,7 @@
     </div>
     <br />
     <h2>Explore the Playlists Below</h2>
-    <br />
 
-    <!-- <h3>{{ playlist.playlist_name }}</h3> -->
     <!-- Playlist Table -->
     <div class="content">
       <div class="row">

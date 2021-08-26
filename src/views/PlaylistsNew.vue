@@ -6,6 +6,7 @@
         newSong();
       "
     >
+      <br />
       <h1>Create a New Playlist</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
