@@ -39,8 +39,11 @@
         <label>Song URL:</label>
         <input type="text" v-model="newSongParams.song_url" />
       </div>
+      <br />
       <input type="submit" value="Save Playlist and Songs" />
     </form>
+    <br />
+    <br />
     <button v-on:click="addSongToPlaylist()">Create Playlist</button>
   </div>
 </template>

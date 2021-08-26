@@ -8,7 +8,7 @@
       <a :href="song.song.song_url">
         {{ song.song.song_name }}
       </a>
-      | {{ song.song.artist_name }} | {{ song.song.album_name }}
+      - {{ song.song.artist_name }} - {{ song.song.album_name }}
     </h3>
     <div>
       <router-link v-bind:to="`/playlists/${playlist_id}/edit`">
