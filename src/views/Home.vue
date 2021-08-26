@@ -1,17 +1,22 @@
 <template>
-  <div class="home" style="margin-left: 275px">
+  <div class="home" style="margin-left: 254px">
     <br />
-    <h1></h1>
-    <br />
+    <h1>CampFyre - Universal Playlist app</h1>
     <div>
       <p>
-        CampFyre is a universal streaming playlist creator, originally focused on Bandcamp, but currently works with any
-        streaming URL.
+        CampFyre is a universal streaming playlist creator,
         <br />
-        CampFyre is designed to help bands and artists make more money, by making it easier for music fans to discover,
+        originally focused on Bandcamp,
+        <br />
+        but currently works with any streaming URL.
+        <br />
+        <br />
+        CampFyre is designed to help bands and artists make more money,
+        <br />
+        by making it easier for music fans to discover,
+        <br />
         share and buy new music.
         <br />
-        We have no affiliation with that dumb festival.
       </p>
     </div>
     <br />

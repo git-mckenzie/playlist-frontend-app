@@ -1,5 +1,5 @@
 <template>
-  <div class="playlists-edit">
+  <div class="playlists-edit" style="margin-left: 254px">
     <form v-on:submit.prevent="updatePlaylist()">
       <h1>Edit Playlist</h1>
       <ul>

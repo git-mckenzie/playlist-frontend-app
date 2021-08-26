@@ -1,5 +1,7 @@
 <template>
-  <div class="playlists-show">
+  <div class="playlists-show" style="margin-left: 254px">
+    <!-- <h1>CampFyre - Universal Playlist app</h1> -->
+    <br />
     <h2>{{ playlist_name }}</h2>
     <h3 v-for="song in songs" v-bind:key="song.id">
       <!-- <a :href="`{${song.song_url}}`"> -->

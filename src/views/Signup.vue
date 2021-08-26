@@ -1,6 +1,7 @@
 <template>
-  <div class="signup">
+  <div class="signup" style="margin-left: 254px">
     <form v-on:submit.prevent="submit()">
+      <br />
       <h1>Signup</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>

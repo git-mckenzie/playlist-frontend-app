@@ -1,5 +1,5 @@
 <template>
-  <div class="user-page">
+  <div class="user-page" style="margin-left: 254px">
     <!-- <h1>CampFyre - Bandcamp Playlist app</h1> -->
     <h2>Your Playlists</h2>
     <!-- Playlist Table -->

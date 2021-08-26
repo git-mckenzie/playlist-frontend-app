@@ -1,5 +1,5 @@
 <template>
-  <div class="playlists-new">
+  <div class="playlists-new" style="margin-left: 254px">
     <form
       v-on:submit.prevent="
         createPlaylist();
