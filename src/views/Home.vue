@@ -33,9 +33,6 @@
                   <thead class="text-primary">
                     <tr>
                       <th class="text-center">Playlist Name</th>
-                      <!-- <th>Country</th>
-                          <th>City</th>
-                          <th class="text-center">Salary</th> -->
                     </tr>
                   </thead>
                   <tbody>

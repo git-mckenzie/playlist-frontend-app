@@ -1,88 +1,90 @@
 <template>
   <div id="app">
-    <div class="wrapper">
-      <div class="sidebar">
-        <!--
+    <h1>CampFyre - Universal Playlist app</h1>
+    <!-- <div class="wrapper"> -->
+    <div class="sidebar">
+      <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
     -->
-        <div class="sidebar-wrapper">
-          <div class="logo">
-            <a href="javascript:void(0)" class="simple-text logo-mini"></a>
-            <a href="javascript:void(0)" class="simple-text logo-normal">CampFyre</a>
-          </div>
-          <ul class="nav">
-            <li>
-              <router-link to="/">
-                <!-- <a href="./"> -->
-                <i class="tim-icons icon-sound-wave"></i>
-                <p>Home</p>
-                <!-- </a> -->
-              </router-link>
-            </li>
-            <li>
-              <router-link v-if="!isLoggedIn()" to="/login">
-                <!-- <a href="./icons.html">
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a href="javascript:void(0)" class="simple-text logo-mini"></a>
+          <a href="javascript:void(0)" class="simple-text logo-normal">CampFyre</a>
+        </div>
+        <ul class="nav">
+          <li>
+            <router-link to="/">
+              <!-- <a href="./"> -->
+              <i class="tim-icons icon-sound-wave"></i>
+              <p>Home</p>
+              <!-- </a> -->
+            </router-link>
+          </li>
+          <li>
+            <router-link v-if="!isLoggedIn()" to="/login">
+              <!-- <a href="./icons.html">
                 <i class="tim-icons icon-atom"></i> -->
-                <p>Login</p>
-                <!-- </a> -->
-              </router-link>
-            </li>
-            <li>
-              <router-link v-if="!isLoggedIn()" to="/signup">
-                <p>Signup</p>
-                <p></p>
-              </router-link>
-              <!-- <a href="./map.html">
+              <p>Login</p>
+              <!-- </a> -->
+            </router-link>
+          </li>
+          <li>
+            <router-link v-if="!isLoggedIn()" to="/signup">
+              <p>Signup</p>
+              <p></p>
+            </router-link>
+            <!-- <a href="./map.html">
                 <i class="tim-icons icon-pin"></i>
                 <p>Maps</p>
               </a> -->
-            </li>
-            <li>
-              <router-link v-if="isLoggedIn()" to="/userpage">
-                <i class="tim-icons icon-headphones"></i>
-                <p>User Page</p>
-                <p></p>
-              </router-link>
-              <!-- <a href="./notifications.html">
+          </li>
+          <li>
+            <router-link v-if="isLoggedIn()" to="/userpage">
+              <i class="tim-icons icon-headphones"></i>
+              <p>User Page</p>
+              <p></p>
+            </router-link>
+            <!-- <a href="./notifications.html">
                 <i class="tim-icons icon-bell-55"></i>
                 <p>Notifications</p>
               </a> -->
-            </li>
-            <!-- <li>
+          </li>
+          <!-- <li>
               <a href="./user.html">
                 <i class="tim-icons icon-single-02"></i>
                 <p>User Profile</p>
               </a>
             </li> -->
-            <!-- <li class="active">
+          <!-- <li class="active">
               <a href="./tables.html">
                 <i class="tim-icons icon-puzzle-10"></i>
                 <p>Table List</p>
               </a>
             </li> -->
-            <!-- <li>
+          <!-- <li>
               <a href="./typography.html">
                 <i class="tim-icons icon-align-center"></i>
                 <p>Typography</p>
               </a>
             </li> -->
-            <!-- <li>
+          <!-- <li>
               <a href="./rtl.html">
                 <i class="tim-icons icon-world"></i>
                 <p>RTL Support</p>
               </a>
             </li> -->
-            <li class="active-pro">
-              <router-link v-if="isLoggedIn()" to="/logout">
-                <!-- <a href="./upgrade.html"> -->
-                <i class="tim-icons icon-button-power"></i>
-                <p>Logout</p>
-                <!-- </a> -->
-              </router-link>
-            </li>
-          </ul>
-        </div>
+          <li class="active-pro">
+            <router-link v-if="isLoggedIn()" to="/logout">
+              <!-- <a href="./upgrade.html"> -->
+              <i class="tim-icons icon-button-power"></i>
+              <p>Logout</p>
+              <!-- </a> -->
+            </router-link>
+          </li>
+        </ul>
       </div>
+    </div>
+    <div class="wrapper">
       <div class="main-panel">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
