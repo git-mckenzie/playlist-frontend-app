@@ -22,14 +22,15 @@
           </li>
           <li>
             <router-link v-if="!isLoggedIn()" to="/login">
-              <!-- <a href="./icons.html">
-                <i class="tim-icons icon-atom"></i> -->
+              <!-- <a href="./icons.html"> -->
+              <i class="tim-icons icon-check-2"></i>
               <p>Login</p>
               <!-- </a> -->
             </router-link>
           </li>
           <li>
             <router-link v-if="!isLoggedIn()" to="/signup">
+              <i class="tim-icons icon-spaceship"></i>
               <p>Signup</p>
               <p></p>
             </router-link>
