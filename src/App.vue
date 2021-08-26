@@ -14,7 +14,7 @@
             <li>
               <router-link to="/">
                 <!-- <a href="./"> -->
-                <!-- <i class="tim-icons icon-chart-pie-36"></i> -->
+                <i class="tim-icons icon-sound-wave"></i>
                 <p>Home</p>
                 <!-- </a> -->
               </router-link>
@@ -39,7 +39,7 @@
             </li>
             <li>
               <router-link v-if="isLoggedIn()" to="/userpage">
-                <i class="tim-icons icon-single-02"></i>
+                <i class="tim-icons icon-headphones"></i>
                 <p>User Page</p>
                 <p></p>
               </router-link>
@@ -74,8 +74,8 @@
             </li> -->
             <li class="active-pro">
               <router-link v-if="isLoggedIn()" to="/logout">
-                <!-- <a href="./upgrade.html">
-                <i class="tim-icons icon-spaceship"></i> -->
+                <!-- <a href="./upgrade.html"> -->
+                <i class="tim-icons icon-button-power"></i>
                 <p>Logout</p>
                 <!-- </a> -->
               </router-link>
@@ -95,7 +95,7 @@
                   <span class="navbar-toggler-bar bar3"></span>
                 </button>
               </div>
-              <a class="navbar-brand" href="javascript:void(0)">Table List</a>
+              <!-- <a class="navbar-brand" href="javascript:void(0)">CampFyre - Universal Playlist Creator</a> -->
             </div>
             <button
               class="navbar-toggler"
@@ -190,14 +190,14 @@
           <div class="container-fluid">
             <ul class="nav">
               <li class="nav-item">
-                <a href="javascript:void(0)" class="nav-link">Creative Tim</a>
+                <a href="https://jasonmckenzie.dev" class="nav-link">jasonmckenzie.dev</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="javascript:void(0)" class="nav-link">About Us</a>
               </li>
               <li class="nav-item">
                 <a href="javascript:void(0)" class="nav-link">Blog</a>
-              </li>
+              </li> -->
             </ul>
             <!-- <div class="copyright">
           ©
